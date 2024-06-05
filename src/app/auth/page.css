@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #7C80DE;
+}
+
+main {
+    display: flex;
+}
+
+#Hero {
+    width: 50vw;
+    height: 100vh;
+    background: url(https://s3-alpha-sig.figma.com/img/6553/a138/029009d43f18a97ad0ac7d590d0e1b2f?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=qqxb0mrK3Mxm4x~yt7F42fdk7SAYTHXD4sDzEbfW6Z0snS580aMOg2XRQkula22PXCg4oVQNS3OMRWhNA-zSvekY-JnR9dVxGYwnpGhv2tHJ9ZdkwDzHCoHxKwSDu1K-f0KoFMvRWxjNA7~BtlivG6necUou1b5tAOWDpxxG1x5wNETqROx-Ta7VAg1kn1MKLLTgvNmdyVnOj9Hllf-zp626MWyPJ-2FV2OsQOSWBRzPFU4T5Gwbaw6NvQziPwCQwkZ4rvM-HU42KcIsfNBFw4oChnETF1MQ02nuTojBmbdG2jKFpvDivPuYWPUXsp35wMZ6CzeEx~u7AK2FP1iB~g__);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-attachment: fixed;
+    mix-blend-mode: luminosity;
+    opacity: 50%;
+}
+
+#Form {
+    width: 50vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px
+    }
+}
+
+span {
+        font-size: 14px;
+        color: #7C80DE;
+        font-weight: 400;
+}
+
+h1 {
+    color: #302640;
+    text-align: center;
+    font-family: Inter;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.56px;
+}
+
+Button {
+    display: flex;
+    width: 384px;
+    height: 49px;
+    border-radius: 6px;
+    border: 1px solid #DFDFDF;
+    background: #FBFBFB;
+    gap: 4px;
+    margin-top: 8px;
+    
+}
+
+#LoginButton{
+    background: #7C80DE;
+    color: white;
+}
+
+#SocialLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+#EmailLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #302640;
+    font-size: 14px;
+    font-weight: 500;
+
+    Input {
+        margin-bottom: 14px;
+    }
+}
+
+p {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.socialIcons {
+    width: 16px;
+}
+
+#LogoPT {
+    width: 305px;
+    height: 68px;
+    margin-bottom: 16px;
+    cursor: pointer;
+}
+h2 {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid #302640; 
+    line-height: 0.1em;
+    margin-top: 24px;
+    margin-bottom: 24px;
+ } 
+ 
+ h2 span { 
+     background:#fff; 
+     color: #302640;
+     padding:0 10px; 
+ }
+
+ #CriarConta {
+    cursor: pointer;
+    color: #929292;
+ }

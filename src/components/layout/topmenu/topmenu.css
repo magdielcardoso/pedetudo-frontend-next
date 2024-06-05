@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#TopMenu {
+    padding-left: 28px;
+    padding-right: 28px;
+    border-bottom: 1px solid #CFCFCF;
+}
