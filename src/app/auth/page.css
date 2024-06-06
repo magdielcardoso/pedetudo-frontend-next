@@ -65,11 +65,6 @@ Button {
     
 }
 
-#LoginButton{
-    background: #7C80DE;
-    color: white;
-}
-
 #SocialLogin {
     display: flex;
     flex-direction: column;
@@ -101,7 +96,7 @@ p {
     width: 16px;
 }
 
-#LogoPT {
+#Logo01 {
     width: 305px;
     height: 68px;
     margin-bottom: 16px;

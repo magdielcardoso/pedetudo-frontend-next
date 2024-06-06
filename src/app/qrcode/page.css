@@ -1,7 +1,6 @@
 h1 {
     color: #302640;
     font-weight: bold;
-    font-size: 24px;
 }
 
 #Route {
@@ -17,6 +16,23 @@ h1 {
 
 #Passos {
     margin-top: 16px;
+}
+
+#Infos {
+    margin-left: 8px;
+}
+
+#Copy {
+    margin-top: 16px;
+    margin-left: 16px;
+
+    h1 {
+        font-size: 24px;
+    }
+
+    span {
+        font-size: 16px;
+    }
 }
 
 h2 {

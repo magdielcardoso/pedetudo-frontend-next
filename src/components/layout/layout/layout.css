@@ -1,21 +1,49 @@
-body {
+body, html {
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Evitar rolagem */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ocupa a altura total da viewport */
+    background-color: #7C80DE;
+    box-sizing: border-box; /* Garantir que padding e bordas sejam inclusos nas dimensões */
+}
+
+header {
+    flex: 0 0 auto;
+    margin: 24px;
+    border-radius: 16px;
+    background-color: white;
+    overflow: hidden;
+    box-sizing: border-box; /* Garantir que margens e padding não aumentem o tamanho */
+    display: flex;
+    flex-direction: column;
 }
 
 #TopMenu {
     padding-left: 28px;
     padding-right: 28px;
     border-bottom: 1px solid #CFCFCF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #MenuLateral {
     padding-left: 24px;
+    padding-right: 24px;
     padding-top: 24px;
-    height: 100vh;
+    height: calc(100vh - 96px); /* Altura da viewport menos as margens do header */
     width: 300px;
     border-right: 1px solid #CFCFCF;
     background-color: white;
+    overflow-y: auto; /* Permitir rolagem interna se necessário */
+    box-sizing: border-box; /* Garantir que o padding não adicione ao width/height */
 }
 
 span {
@@ -29,25 +57,32 @@ span {
     width: 250px;
     height: 40px;
     border-radius: 10px;
-    padding-left: 14px;
-
+    padding-left: 8px;
+    padding-right: 8px;
 }
-#LinkItem:hover{
+#LinkItem:hover {
     background-color: #F1F5F9;
 }
 
-header {
-    margin: 48px;
-    border-radius: 16px;
-    background-color: white;
+#LinkItem01 {
+    color: white;
+    background-color: #ff8961;
+    font-weight: 600;
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
 }
-
-main{
-    background-color: #7C80DE;
+#LinkItem01:hover {
+    background-color: #d17050;
 }
 
 #Screen {
     background-color: #F1F5F9;
-    width: 100vw;
+    flex: 1; /* Ocupa o restante do espaço disponível */
     padding: 24px;
+    overflow-y: auto; /* Permitir rolagem interna se necessário */
+    box-sizing: border-box; /* Garantir que o padding não adicione ao width/height */
+    width: calc(100vw - 300px); /* Largura total menos a largura do menu lateral */
 }

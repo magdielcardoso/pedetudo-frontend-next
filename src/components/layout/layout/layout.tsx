@@ -14,10 +14,11 @@ import logo from "../../../../public/Icon_Laranja.svg";
 import Image from "next/image";
 import Link from "next/link";
 
+
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <main className="flex flex-col">
-      <header>
+      <header className="flex-0">
         <div
           id="TopMenu"
           className="min-h-14 flex items-center justify-between"
@@ -28,7 +29,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             src={logo}
             alt="logo"
           />
+
           <div className="Icons flex flex-row gap-2 items-center">
+            <h1 className="text-base">Pizzaria Sol & Lua</h1>
             <Search className="cursor-pointer" />
             <Bell className="cursor-pointer" />
             <Avatar className="cursor-pointer">
@@ -44,15 +47,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div id="MenuLateral" className="flex flex-col gap-2">
             <Link
               id="LinkItem"
-              href=""
+              href="/dash"
               className="flex items-center font-bold gap-2"
             >
               <Home />
-              Home
+              Dashboard
             </Link>
             <Link
               id="LinkItem"
-              href=""
+              href="/config"
               className="flex items-center font-bold gap-2"
             >
               <Settings />
@@ -60,8 +63,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </Link>
             <span>Serviços</span>
             <Link
-              id="LinkItem"
-              href=""
+              id="LinkItem01"
+              href="/qrcode"
               className="flex items-center font-medium gap-2"
             >
               <Bot />
@@ -69,7 +72,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </Link>
             <Link
               id="LinkItem"
-              href=""
+              href="/pedidos"
               className="flex items-center font-medium gap-2"
             >
               <ClipboardList />
@@ -78,7 +81,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <span>Meu negócio</span>
             <Link
               id="LinkItem"
-              href=""
+              href="/minhaloja"
               className="flex items-center font-medium gap-2"
             >
               <Store />
@@ -86,14 +89,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </Link>
             <Link
               id="LinkItem"
-              href=""
+              href="/produtos"
               className="flex items-center font-medium gap-2"
             >
               <ShoppingCart />
               Produtos
             </Link>
           </div>
-          <div id="Screen">{children}</div>
+          <div id="Screen" className="flex-1">
+            {children}
+          </div>
         </div>
       </header>
     </main>
