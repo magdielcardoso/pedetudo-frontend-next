@@ -25,7 +25,7 @@ export default function Auth() {
       <div id="Form">
         <form id="FormDados">
           <Image id="Logo01" src={logo} alt="logo" />
-          <h1>Acesse sua conta!</h1>
+          <h1 id="Acesse">Acesse sua conta!</h1>
           <div id="SocialLogin">
             <Button variant={"ghost"}>
               <img
