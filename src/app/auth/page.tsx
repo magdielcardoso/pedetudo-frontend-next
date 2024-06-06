@@ -44,8 +44,8 @@ export default function Auth() {
               Entrar com Facebook
             </Button>
           </div>
-          <h2>
-            <span>Ou faça o login com seu e-mail</span>
+          <h2 id="LoginSocialCopy">
+            <span id="OuFaca">Ou faça o login com seu e-mail</span>
           </h2>
           <div id="EmailLogin">
             <p>E-mail</p>
