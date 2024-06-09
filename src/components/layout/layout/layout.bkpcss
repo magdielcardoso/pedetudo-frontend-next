@@ -10,7 +10,7 @@ main {
     display: flex;
     flex-direction: column;
     height: 100vh; /* Ocupa a altura total da viewport */
-    background-color: #ff8961;
+    background-color: #7C80DE;
     box-sizing: border-box; /* Garantir que padding e bordas sejam inclusos nas dimensões */
 }
 
@@ -28,7 +28,7 @@ header {
 #TopMenu {
     padding-left: 28px;
     padding-right: 28px;
-    background-color: #302640;
+    background-color: white;
     border-bottom: 1px solid #CFCFCF;
     display: flex;
     color:white;
@@ -90,5 +90,5 @@ span {
 }
 
 #NomeNegocio {
-    color: white;
+    color: 302640;
 }

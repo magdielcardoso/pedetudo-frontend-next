@@ -8,10 +8,28 @@ h1 {
     border-radius: 24px;
     padding: 24px;
 }
+h3 {
+    background-color: #7C80DE;
+    height: 40px;
+    align-content: center;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 8px;
+    color: white;
+}
+
+#ConnectButton {
+    background-color: rgb(74, 187, 74);
+    width: auto;
+    margin-top: 16px;
+}
 
 #Code {
     border-right: 1px solid #CFCFCF;
     padding-right: 24px;
+    margin-left: 16px;
+    width: 800px;
+    align-content: center;
 }
 
 #Passos {

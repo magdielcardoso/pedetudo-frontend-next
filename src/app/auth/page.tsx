@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { LogIn } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import axios from "axios";
 
 
 
@@ -14,7 +15,7 @@ export default function Auth() {
 
   const router = useRouter();
 
-  const handleClick = (e: any) => {
+  const handleClick = async (e: any) => {
     e.preventDefault();
     router.push('/dash');
   };
