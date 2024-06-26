@@ -16,7 +16,7 @@ export default function Topmenu() {
                 <Search className="cursor-pointer"/>
                 <Bell className="cursor-pointer"/>
                 <Avatar className="cursor-pointer">
-                    <AvatarImage src="https://github.com/magdielcardoso.png" alt="profile photo" />
+                    <AvatarImage src="/LogoPizzaria.jpg" alt="profile photo" />
                     <AvatarFallback>PT</AvatarFallback>
                 </Avatar>
             </div>

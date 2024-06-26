@@ -9,11 +9,16 @@ import { Zap } from "lucide-react";
 import { useState } from "react";
 import TenantFetch from "@/services/tenantFetch";
 import { io } from "socket.io-client";
-const socket = io("http://api.pedetudo.online:9090"); // Substitua pelo URL real do seu backend
+
+const socket = io("ws://api.pedetudo.online:8080/");
 
 export default function Dashboard() {
   const [statusQr, setStatusQr] = useState("Gerar QRCode");
   const [statusConnection, setStatusConnection] = useState("Desconectado");
+  socket.on("whatsapp_authenticated", (data) => {
+    console.log("Sessão do WhatsApp autenticada:", data.sessionId);
+    setStatusConnection(data);
+  });
 
   let sessionName: string;
   let sessionId: string;
@@ -40,30 +45,24 @@ export default function Dashboard() {
   const handleLinkClick = async (event: { preventDefault: () => void }) => {
     try {
       const response = await axios.get(
-        "http://api.pedetudo.online:9090/session/start/" + sessionId,
+        "http://api.pedetudo.online:8080/session/start/" + sessionId,
         {
           headers: { "x-api-key": apiKey },
         }
       );
 
       if (response.status === 200) {
-        console.log("Sessão iniciada com sucesso!");
-        io.on("connect", (socket) => {
-          socket.on("whatsapp_authenticated", (sessionId) => {
-            console.log(`Sessão do Whatsapp ${sessionId} autenticada`);
-            // Execute as ações que você deseja realizar quando uma sessão for autenticada
-          });
-        });
-        axios
-          .post("http://api.pedetudo.online:8181/sessions", {
-            id: "1",
-          })
-          .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.error(error);
-          });
+        // console.log("Sessão iniciada com sucesso!");
+        // axios
+        //   .post("http://api.pedetudo.online:8181/sessions", {
+        //     id: "1",
+        //   })
+        //   .then(function (response) {
+        //     console.log(response);
+        //   })
+        //   .catch(function (error) {
+        //     console.error(error);
+        //   });
 
         console.log(response.data);
 
@@ -73,7 +72,7 @@ export default function Dashboard() {
 
         // Buscar imagem do QRCode com axios
         const qrCodeImageResponse = await axios.get(
-          "http://api.pedetudo.online:9090/session/qr/" + sessionId + "/image",
+          "http://api.pedetudo.online:8080/session/qr/" + sessionId + "/image",
           {
             headers: { "x-api-key": apiKey },
             responseType: "blob",
@@ -117,7 +116,7 @@ export default function Dashboard() {
               alt="qrcode"
             />
           </div>
-          <div id="Infos" className="flex flex-col justify-center w-full">
+          <div id="Infos" className="flex flex-col justify-center">
             <h1 id="StatusConnect">Conecte o Whatsapp do seu negócio!</h1>
             <div id="Passos" className="flex flex-col">
               <span>1. Abra o Whatsapp no seu celular.</span>
@@ -146,7 +145,7 @@ export default function Dashboard() {
               <Zap className="w-4" />
             </Button>
           </div>
-          <div className="flex w-full justify-end font-medium ">
+          <div id="Status" className="flex w-full justify-end font-medium ">
             <h3>{statusConnection}</h3>
           </div>
         </div>

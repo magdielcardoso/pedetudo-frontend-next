@@ -1,4 +1,3 @@
-"use client"
 import "./layout.css";
 import {
   Bell,
@@ -14,27 +13,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import logo from "../../../../public/Icon_Laranja.svg";
 import Image from "next/image";
 import Link from "next/link";
-import TenantFetch from "@/services/tenantFetch";
-import { useState, useEffect } from "react";
-import { Spinner } from "@/components/ui/spinner";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const [dataTenant, setDataTenant] = useState<any>(null);
-
-  useEffect(() => {
-    const fetchTenant = async () => {
-      const data = await TenantFetch();
-      setDataTenant(data);
-    };
-
-    fetchTenant();
-  }, []);
-
-  if (!dataTenant) {
-    return <div className="flex items-center justify-center w-full h-full bg-roxoescuro"><Spinner size={"large"}/></div>;
-    
-  }
-
   return (
     <main className="flex flex-col">
       <header className="flex-0">
@@ -49,15 +29,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             alt="logo"
           />
 
-          <h1 id="NomeNegocio" className="text-white text-base">
-            {dataTenant.nomeTenant}
+          <h1 id="NomeNegocio" className="text-base">
+            Pizzaria Ditalia
           </h1>
           <div className="Icons flex flex-row gap-2 items-center">
-            <Search className="cursor-pointer" />
-            <Bell className="cursor-pointer" />
+            <Search className="cursor-pointer text-black" />
+            <Bell className="cursor-pointer text-black" />
             <Avatar className="cursor-pointer">
               <AvatarImage
-                src={dataTenant.logoPath}
+                src="/LogoPizzaria.jpg"
                 alt="profile photo"
               />
               <AvatarFallback>PT</AvatarFallback>

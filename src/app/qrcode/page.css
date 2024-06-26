@@ -18,9 +18,13 @@ h3 {
     color: white;
 }
 
+#Status {
+    width: 150px;
+}
+
 #ConnectButton {
     background-color: rgb(74, 187, 74);
-    width: auto;
+    width: 350px;
     margin-top: 16px;
 }
 
@@ -34,10 +38,13 @@ h3 {
 
 #Passos {
     margin-top: 16px;
+    
 }
 
 #Infos {
     margin-left: 8px;
+    width: 2170px;
+    
 }
 
 #Copy {

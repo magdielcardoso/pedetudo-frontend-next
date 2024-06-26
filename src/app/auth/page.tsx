@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { Button } from "@/components/ui/button";
 import "./page.css";
@@ -7,17 +7,26 @@ import { Input } from "@/components/ui/input";
 import { LogIn } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import axios from "axios";
-
-
+import { createClient } from "@supabase/supabase-js";
+const supabaseUrl = "https://itxomtptgtpkrmbyxgpa.supabase.co";
+const supabaseKey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml0eG9tdHB0Z3Rwa3JtYnl4Z3BhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTcxNjc5NjMsImV4cCI6MjAzMjc0Mzk2M30.neagf5z_xLDgmiNNFIsG5wCkZaIoTCW2PAKwPI2vWvk";
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 export default function Auth() {
-
   const router = useRouter();
 
   const handleClick = async (e: any) => {
     e.preventDefault();
-    router.push('/dash');
+    let { data, error } = await supabase.auth.signInWithPassword({
+      email: document.getElementById("InputEmail")?.value,
+      password: document.getElementById("InputSenha")?.value,
+    });
+    if (error) {
+      alert("E-mail ou senha inválidos!");
+    } else {
+      router.push("/dash");
+    }
   };
 
   return (
@@ -50,12 +59,16 @@ export default function Auth() {
           </h2>
           <div id="EmailLogin">
             <p>E-mail</p>
-            <Input placeholder="Insira seu e-mail"></Input>
+            <Input id="InputEmail" placeholder="Insira seu e-mail"></Input>
             <p>Senha</p>
-            <Input placeholder="Insira sua senha"></Input>
+            <Input id="InputSenha" placeholder="Insira sua senha"></Input>
             <p>Esqueceu sua senha?</p>
-            <Button onClick={handleClick} id="LoginButton" className="text-white">
-                Entrar
+            <Button
+              onClick={handleClick}
+              id="LoginButton"
+              className="text-white"
+            >
+              Entrar
               <LogIn className="mr-2 h-4 w-4" />
             </Button>
           </div>
